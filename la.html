@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página Bonita</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .container {
+    text-align: center;
+  }
+
+  .button {
+    background-color: #ff5555;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .popup {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>¡Bienvenida!</h1>
+  <button class="button" id="popupButton">Toca aquí</button>
+  <div class="popup" id="popup">
+    <p>Elige un número:</p>
+    <button class="button" onclick="showMessage('I miss you')">1</button>
+    <button class="button" onclick="showMessage('Hope you\'re ok')">2</button>
+  </div>
+</div>
+
+<script>
+  const popupButton = document.getElementById('popupButton');
+  const popup = document.getElementById('popup');
+
+  popupButton.addEventListener('click', () => {
+    popup.style.display = 'block';
+  });
+
+  function showMessage(message) {
+    alert(message);
+    popup.style.display = 'none';
+  }
+</script>
+</body>
+</html>
